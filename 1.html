@@ -63,7 +63,7 @@
       const button = document.querySelector("button");
       button.addEventListener("click", () => {
         button.textContent = `Добавлено`;
-      });
+      }); // не понял как сделать на всех кнопках
 
       /*
     4. Создайте полную (глубокую) копию элемента с классом product, измените в
@@ -77,7 +77,15 @@
       /*
     5. По истечении 2 секунд с момента открытия страницы первый товар должен быть
     удален из html.
-     */
+           setTimeout(function(){
+	document.querySelector('.product').style.display = 'none';
+}, 2000); // был такой вариант
+*/
+
+setTimeout(function(){
+	document.querySelector('.product').remove()
+}, 2000);
+
     </script>
   </body>
 </html>
