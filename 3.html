@@ -38,12 +38,33 @@
   golden, также такой класс должен ставиться всем звездам до нее слева.
   */
 
-
   /*
   2. Когда мы уводим курсор мыши от звезды, все поставленные классы из первого
   задания должны быть удалены.
    */
 
+
+  const items = document.querySelectorAll('.fas')
+
+  function onEnter(evt) {
+    var currentIndex = evt.target.index
+    for (var i = 0; i < items.length; i++) {
+      if (items[i].index <= currentIndex) {
+        if (!items[i].classList.contains('golden')) items[i].classList.add('golden')
+      } else {
+        if (items[i].classList.contains('golden')) items[i].classList.remove('golden')
+      }
+    }
+
+  }
+  for (var i = 0; i < items.length; i++) {
+    items[i].index = i
+    items[i].onmouseenter = onEnter
+  }
+  
+
+
+  
 
   /*
   3. Когда мы переводим мышь от одной звезды к другой, у нас могут мигать
