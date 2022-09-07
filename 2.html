@@ -100,6 +100,16 @@
    */
 
 
+   const inputEl = document.querySelectorAll('.form-control');
+
+   document.querySelector('form').addEventListener('submit', event => {
+    if (inputEl.value === '') {
+      event.preventDefault();
+      
+    }
+   });
+   //-- не смог понять 
+
 </script>
 </body>
 </html>
